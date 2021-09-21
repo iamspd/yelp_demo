@@ -1,10 +1,11 @@
-package com.example.yelpdemo
+package com.example.yelpdemo.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import com.example.yelpdemo.R
 
 class SearchActivity : AppCompatActivity() {
 

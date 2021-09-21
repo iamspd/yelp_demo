@@ -1,4 +1,4 @@
-package com.example.yelpdemo
+package com.example.yelpdemo.controller
 
 import android.content.Context
 import android.content.Intent
@@ -11,6 +11,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import com.bumptech.glide.Glide
+import com.example.yelpdemo.R
+import com.example.yelpdemo.YelpRestaurants
+import com.example.yelpdemo.view.RestaurantDetailsActivity
 
 class CustomAdapter(
     private var context: Context?,

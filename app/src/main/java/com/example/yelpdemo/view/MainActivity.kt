@@ -1,18 +1,18 @@
-package com.example.yelpdemo
+package com.example.yelpdemo.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.GridView
-import com.bumptech.glide.Glide
+import com.example.yelpdemo.*
+import com.example.yelpdemo.controller.CustomAdapter
+import com.example.yelpdemo.model.Service
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.*
-import kotlin.collections.ArrayList
 
 // constants
 private const val TAG = "MainActivity"

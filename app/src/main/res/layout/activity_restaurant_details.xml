@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/LinearLayouts"
-    tools:context=".RestaurantDetailsActivity">
+    tools:context=".view.RestaurantDetailsActivity">
 
     <ImageView
         android:id="@+id/ivCoverPhoto"
