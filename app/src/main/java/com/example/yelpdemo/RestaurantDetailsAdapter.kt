@@ -16,7 +16,9 @@ class RestaurantDetailsAdapter(var context: Context, var reviews: List<YelpRevie
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.recycler_list_item, parent, false))
+        return ViewHolder(
+            LayoutInflater.from(context).inflate(R.layout.recycler_list_item, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

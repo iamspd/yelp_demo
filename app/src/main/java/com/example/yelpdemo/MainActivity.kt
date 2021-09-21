@@ -23,10 +23,12 @@ private const val API_KEY =
 
 class MainActivity : AppCompatActivity() {
 
+    // variables
     private var viewSortedAscending = true
-    val restaurants = mutableListOf<YelpRestaurants>()
-
     var adapter: CustomAdapter? = null
+
+    // final variables
+    val restaurants = mutableListOf<YelpRestaurants>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,14 +75,14 @@ class MainActivity : AppCompatActivity() {
 
     fun sortData(view: View) {
 
-        if (!viewSortedAscending) {
+        if (viewSortedAscending) {
             restaurants.sortBy { it.name }
             adapter?.notifyDataSetChanged()
-            viewSortedAscending = true
+            viewSortedAscending = false
         } else {
             restaurants.sortByDescending { it.name }
             adapter?.notifyDataSetChanged()
-            viewSortedAscending = false
+            viewSortedAscending = true
         }
     }
 }

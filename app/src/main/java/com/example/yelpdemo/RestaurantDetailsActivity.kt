@@ -23,8 +23,11 @@ private const val API_KEY =
 
 class RestaurantDetailsActivity : AppCompatActivity() {
 
+    // variables
     var adapter: RestaurantDetailsAdapter? = null
-    var reviews = mutableListOf<YelpReviews>()
+
+    // final variables
+    val reviews = mutableListOf<YelpReviews>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +55,7 @@ class RestaurantDetailsActivity : AppCompatActivity() {
             .build()
         val retrofitService = retrofit.create(Service::class.java)
         retrofitService.getRestaurantReviews("Bearer $API_KEY", "$id")
-            .enqueue(object: Callback<APIReviewResults> {
+            .enqueue(object : Callback<APIReviewResults> {
                 override fun onResponse(
                     call: Call<APIReviewResults>,
                     response: Response<APIReviewResults>

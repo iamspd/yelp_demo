@@ -18,11 +18,11 @@ class CustomAdapter(
 ) : BaseAdapter() {
 
     override fun getCount(): Int {
-       if (listItem.size <= 20) {
-           return listItem.size
-       } else {
-           return 20
-       }
+        if (listItem.size <= 20) {
+            return listItem.size
+        } else {
+            return 20
+        }
     }
 
     override fun getItem(p0: Int): Any {
@@ -34,7 +34,8 @@ class CustomAdapter(
     }
 
     override fun getView(position: Int, view: View?, viewGroup: ViewGroup?): View? {
-        var layoutInflater = context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        var layoutInflater =
+            context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
         var listView = view
         if (listView == null) {
