@@ -25,11 +25,6 @@ class RestaurantDetailsAdapter(var context: Context, var reviews: List<YelpRevie
     }
 
     override fun getItemCount(): Int {
-       /*return if (reviews.size == 1) {
-            reviews.size
-        } else {
-            1
-        }*/
         return reviews.size
     }
 

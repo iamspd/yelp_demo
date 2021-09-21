@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">YelpDemo</string>
+    <string name="user_name">User Name</string>
+    <string name="review_dateTime">2016–08–29 00:41:13</string>
+    <string name="review_text">Review text goes here…</string>
+    <string name="review">Review</string>
+    <string name="restaurant_cover_photo">Restaurant Cover Photo</string>
+    <string name="restaurant_name">Restaurant Name</string>
+    <string name="restaurant_address">Restaurant Address</string>
+    <string name="search_keyword">Enter name (e.g. Avocado)</string>
+    <string name="search_locale">Enter locale (e.g. NYC)</string>
+    <string name="search">Search</string>
+    <string name="sort">Sort</string>
+
+
 </resources>

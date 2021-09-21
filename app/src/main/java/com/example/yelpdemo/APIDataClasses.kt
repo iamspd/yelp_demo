@@ -2,9 +2,9 @@ package com.example.yelpdemo
 
 import com.google.gson.annotations.SerializedName
 
-data class APISearchResults (
+data class APISearchResults(
     @SerializedName("businesses") val restaurants: List<YelpRestaurants>,
-){
+) {
     fun displayList(): List<YelpRestaurants> {
         return restaurants.take(21)
     }
@@ -21,7 +21,7 @@ data class YelpLocation(
     @SerializedName("address1") val address: String
 )
 
-data class APIReviewResults (
+data class APIReviewResults(
     val reviews: List<YelpReviews>
 )
 

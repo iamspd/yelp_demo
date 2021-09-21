@@ -1,52 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    style="@style/LinearLayouts"
     tools:context=".RestaurantDetailsActivity">
 
     <ImageView
         android:id="@+id/ivCoverPhoto"
-        android:layout_width="match_parent"
+        style="@style/ImageViews"
         android:layout_height="252dp"
-        android:layout_marginTop="12dp"
-        android:contentDescription="Restaurant Cover Photo"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher" />
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:contentDescription="@string/restaurant_cover_photo"
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/tvRestaurantName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="12dp"
+        style="@style/AllTextViews"
+        android:layout_marginTop="8dp"
         android:text="@android:string/ok"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvRestaurantAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="12dp"
+        style="@style/AllTextViews"
+        android:layout_marginTop="2dp"
         android:text="@android:string/ok"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        style="@style/AllTextViews"
         android:layout_marginTop="12dp"
-        android:text="Reviews"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textStyle="bold" />
+        android:text="@string/review"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/rvReviews"
-            android:layout_margin="12dp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReviews"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp" />
 
 </LinearLayout>
