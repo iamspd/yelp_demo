@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import retrofit2.Call
 import retrofit2.Callback
@@ -19,6 +22,10 @@ private const val API_KEY =
     "FhtucBGllg9klHY_M4tfwhRLN_5cuDOQVHQMcf4Og188O5lWfqpP7lv34FLQzfZ_DL_I-Dn9EK6HeiCbjlvnRKAnqUmPmIuK0nN1Dnnm2edsbOM2FDqYxzvpw7FAYXYx"
 
 class RestaurantDetailsActivity : AppCompatActivity() {
+
+    var adapter: RestaurantDetailsAdapter? = null
+    var reviews = mutableListOf<YelpReviews>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurant_details)
@@ -33,6 +40,12 @@ class RestaurantDetailsActivity : AppCompatActivity() {
         restaurantAddress.text = bundle.getString("address")
         var id = bundle.getString("id")
 
+        adapter = RestaurantDetailsAdapter(this, reviews)
+
+        var recyclerView = findViewById<RecyclerView>(R.id.rvReviews)
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -44,6 +57,18 @@ class RestaurantDetailsActivity : AppCompatActivity() {
                     call: Call<APIReviewResults>,
                     response: Response<APIReviewResults>
                 ) {
+                    val body = response.body()
+                    if (body == null) {
+                        Log.w(TAG, "Did not receive valid response from Yelp API... exiting")
+                        return
+                    }
+
+                    reviews.add(body.reviews[0])
+
+                    Log.i("Reviews", body.reviews[0].toString())
+                    //reviews.addAll(body.reviews)
+                    adapter!!.notifyDataSetChanged()
+
                     Log.i(TAG, "onResponse $response")
                 }
 

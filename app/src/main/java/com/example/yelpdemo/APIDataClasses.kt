@@ -3,8 +3,12 @@ package com.example.yelpdemo
 import com.google.gson.annotations.SerializedName
 
 data class APISearchResults (
-    @SerializedName("businesses") val restaurants: List<YelpRestaurants>
-)
+    @SerializedName("businesses") val restaurants: List<YelpRestaurants>,
+){
+    fun displayList(): List<YelpRestaurants> {
+        return restaurants.take(21)
+    }
+}
 
 data class YelpRestaurants(
     val name: String,

@@ -2,6 +2,7 @@ package com.example.yelpdemo
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +18,11 @@ class CustomAdapter(
 ) : BaseAdapter() {
 
     override fun getCount(): Int {
-       return listItem.size
+       if (listItem.size <= 20) {
+           return listItem.size
+       } else {
+           return 20
+       }
     }
 
     override fun getItem(p0: Int): Any {
@@ -59,6 +64,8 @@ class CustomAdapter(
             intent.putExtra("name", listItem[position].name)
             intent.putExtra("address", listItem[position].location.address)
             intent.putExtra("id", listItem[position].id)
+
+            Log.i("Id", listItem[position].id)
 
             context!!.startActivity(intent)
         }
