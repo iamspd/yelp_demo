@@ -21,10 +21,10 @@ class CustomAdapter(
 ) : BaseAdapter() {
 
     override fun getCount(): Int {
-        if (listItem.size <= 20) {
+        if (listItem.size <= 10) {
             return listItem.size
         } else {
-            return 20
+            return 10
         }
     }
 
